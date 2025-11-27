@@ -66,14 +66,14 @@ NRF24_Write_Reg(NRF24_REG_RF_CH, 76); // F = 2.400 MHz + 76
 ```
 NRF24_Write_Reg(NRF24_REG_RF_SETUP, NRF24_DataRate_1M | NRF24_OutputPower_M18dBm); //Output power:0dBm, Datarate:1Mbps
 ```
-# Без DPL
+### Без DPL
 - Устанавливаем длину payload для всех труб
 ```
 NRF24_Write_Reg(NRF24_REG_RX_PW_P0, 32); // длина payload для 0 трубы - 32 байта
 ....
 ```
-# С DPL
-DPL(dynamic payload lenght) - это динамическая длина RX payload, благодаря еЙ не нужно настраивать длину payload для всех труб.
+### С DPL
+DPL(dynamic payload lenght) - это динамическая длина RX payload, благодаря ей не нужно настраивать длину payload для всех труб.
 - Включаем DPL
 ```
 NRF24_Write_Reg_DMA(NRF24_REG_FEATURE, 1 << NRF24_EN_DPL);
