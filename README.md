@@ -6,40 +6,40 @@
 # Функции
 Функции с использованием DMA и без него выполняют одни и те же задачи 
 
-## NRF24_Read_Reg(uint8_t rg), NRF24_Read_Reg_DMA(uint8_t rg)
+### NRF24_Read_Reg(_DMA)
 Читает значение из регистра.
 
-## NRF24_Write_Reg(uint8_t rg, uint8_t dt), NRF24_Write_Reg_DMA(uint8_t rg, uint8_t dt)
+### NRF24_Write_Reg(_DMA)
 Записывает значение в регистр с перезаписью ВСЕГО регистра.
 
-## NRF24_Write_Bit(uint8_t rg, uint8_t bit, BitAction value), NRF24_Write_Bit_DMA(uint8_t rg, uint8_t bit, BitAction value)
+### NRF24_Write_Bit(_DMA)
 Записывает ОДИН бит в регситр без перезаписи всего регистра.
 
-## NRF24_Write_Reg_Multiple(uint8_t reg, uint8_t *data, uint8_t data_size), NRF24_Write_Reg_Multiple_DMA(uint8_t reg, uint8_t *data, uint8_t data_size)
+### NRF24_Write_Reg_Multiple(_DMA)
 Аналогичен NRF24_Write_Reg, но записывает данные в регистр размером больше 1 байта (адрес).
 
-## NRF24_Write_Payload(uint8_t *data, uint8_t data_size), NRF24_Write_Payload_DMA(uint8_t *data, uint8_t data_size)
+### NRF24_Write_Payload(_DMA)
 Записывает данные в регистр TX payload.
 
-## NRF24_Clear_Status(void), NRF24_Clear_Status_DMA(void)
+### NRF24_Clear_Status(_DMA)
 Очищает биты статуса в регисре STATUS.
 
-## NRF24_FLUSH_RX(void), NRF24_FLUSH_TX(void); NRF24_FLUSH_RX_DMA(void), NRF24_FLUSH_TX_DMA(void)
+### NRF24_FLUSH_RX(_DMA), NRF24_FLUSH_TX(_DMA)
 Очищают RX и TX буфферы соответственно.
 
-## NRF24_Set_rx_addr(uint8_t *addr, uint8_t num_pipe), NRF24_Set_rx_addr_DMA(uint8_t *addr, uint8_t num_pipe)
+### NRF24_Set_rx_addr(_DMA)
 Записывает адреса приёмников (подробней про адреса см. в разделе Основная настройка NRF24LO1+).
 
-## NRF24_Set_tx_addr(uint8_t *addr), NRF24_Set_tx_addr_DMA(uint8_t *addr), 
+### NRF24_Set_tx_addr(_DMA)
 Записывает адреса передатчика (подробней про адреса см. в разделе Основная настройка NRF24LO1+).
 
-## NRF24_Read_RX(uint8_t *data, uint8_t data_size), NRF24_Read_RX_DMA(uint8_t *data, uint8_t data_size)
+### NRF24_Read_RX(_DMA)
 Считывает полученный данные из RX payload
 
-## NRF24_RX_PAYLOAD_LENGHT(void), NRF24_RX_PAYLOAD_LENGHT_DMA(void)
+### NRF24_RX_PAYLOAD_LENGHT(_DMA)
 Считывает длину полученных данный из RX payload (используется только с DPL)
 
-## NRF24_Read_RX_DPL(uint8_t *data), NRF24_Read_RX_DMA_DPL(uint8_t *data)
+### NRF24_Read_RX(_DMA)_DPL
 Считывает полученный данные из RX payload c DPL
 
 #Пример:
