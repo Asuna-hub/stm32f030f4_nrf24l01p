@@ -6,40 +6,40 @@
 # Функции
 Функции с использованием DMA и без него выполняют одни и те же задачи 
 
-### - NRF24_Read_Reg(_DMA)
+- NRF24_Read_Reg(_DMA)
 Читает значение из регистра.
 
-### NRF24_Write_Reg(_DMA)
+- NRF24_Write_Reg(_DMA)
 Записывает значение в регистр с перезаписью ВСЕГО регистра.
 
-### NRF24_Write_Bit(_DMA)
+- NRF24_Write_Bit(_DMA)
 Записывает ОДИН бит в регситр без перезаписи всего регистра.
 
-### NRF24_Write_Reg_Multiple(_DMA)
+- NRF24_Write_Reg_Multiple(_DMA)
 Аналогичен NRF24_Write_Reg, но записывает данные в регистр размером больше 1 байта (адрес).
 
-### NRF24_Write_Payload(_DMA)
+- NRF24_Write_Payload(_DMA)
 Записывает данные в регистр TX payload.
 
-### NRF24_Clear_Status(_DMA)
+- NRF24_Clear_Status(_DMA)
 Очищает биты статуса в регисре STATUS.
 
-### NRF24_FLUSH_RX(_DMA), NRF24_FLUSH_TX(_DMA)
+- NRF24_FLUSH_RX(_DMA), NRF24_FLUSH_TX(_DMA)
 Очищают RX и TX буфферы соответственно.
 
-### NRF24_Set_rx_addr(_DMA)
+- NRF24_Set_rx_addr(_DMA)
 Записывает адреса 1-5 труб приёмников.
 
-### NRF24_Set_P0_TX_addr(_DMA)
+- NRF24_Set_P0_TX_addr(_DMA)
 Записывает адрес нулевой трубы и трубы "передачи"(TX), важно чтобы они были одинаковыми.
 
-### NRF24_Read_RX(_DMA)
+- NRF24_Read_RX(_DMA)
 Считывает полученный данные из RX payload
 
-### NRF24_RX_PAYLOAD_LENGHT(_DMA)
+- NRF24_RX_PAYLOAD_LENGHT(_DMA)
 Считывает длину полученных данный из RX payload (только с DPL).
 
-### NRF24_Read_RX(_DMA)_DPL
+- NRF24_Read_RX(_DMA)_DPL
 Считывает полученный данные из RX payload (только с DPL).
 
 # Настройка NRF24L01+
