@@ -103,6 +103,19 @@ uint8_t NRF24_RX_PAYLOAD_LENGHT(void){
 	return size;
 }
 
+uint8_t NRF24_Read_RX_DPL(uint8_t *data){
+	uint8_t len = NRF24_RX_PAYLOAD_LENGHT();
+	NRF24_CSN_LOW;
+	SPI_transfer_data(NRF24_CMD_R_RX_PAYLOAD);
+	while(len--){
+		*data++ = SPI_transfer_data(NRF24_CMD_NOP);
+	}
+	NRF24_CSN_HIGH;
+
+	return NRF24_Read_Reg(NRF24_REG_STATUS);
+	
+}
+
 //                                         Functions with using DMA
 /*================================================================================================================*/
 uint8_t tx_data[33];
@@ -242,6 +255,24 @@ uint8_t NRF24_RX_PAYLOAD_LENGHT_DMA(void){
 	SPI_DMA_RX_TX_OFF();
 	
 	return rx_data[1];
+}
+
+uint8_t NRF24_Read_RX_DPL_DMA(uint8_t *data){
+	uint8_t len = NRF24_RX_PAYLOAD_LENGHT_DMA();
+	tx_data[0] = NRF24_CMD_R_RX_PAYLOAD;
+	memset(&tx_data[1], NRF24_CMD_NOP, len);
+	SPI_DMA_transfer_data(tx_data, rx_data, len + 1);
+	
+    NRF24_CSN_LOW;
+	SPI_DMA_RX_TX_ON();
+	DMA_RX_TX_ON();
+	while(SPI1->SR & SPI_SR_BSY);
+	NRF24_CSN_HIGH;
+	SPI_DMA_RX_TX_OFF();
+	
+	memcpy(&data[0], &rx_data[1], len);
+	
+	return NRF24_Read_Reg_DMA(NRF24_REG_STATUS);
 }
 void NRF24_Send_TX_DMA(uint8_t *data, uint16_t size){
 	NRF24_Write_Payload_DMA(data, size);

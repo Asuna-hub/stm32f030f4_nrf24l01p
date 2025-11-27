@@ -193,6 +193,7 @@ void NRF24_FLUSH_RX(void);
 void NRF24_FLUSH_TX(void);
 void NRF24_RX_Config(void);
 uint8_t NRF24_Read_RX(uint8_t *data, uint8_t data_size);
+uint8_t NRF24_Read_RX_DPL(uint8_t *data);
 uint8_t NRF24_RX_PAYLOAD_LENGHT(void);
 void NRF24_Set_rx_addr(uint8_t *addr, uint8_t num_pipe);
 void NRF24_Set_tx_addr(uint8_t *addr);
@@ -211,6 +212,7 @@ void NRF24_FLUSH_TX_DMA(void);
 void NRF24_Set_rx_addr_DMA(uint8_t *addr, uint8_t num_pipe);
 void NRF24_Set_tx_addr_DMA(uint8_t *addr);
 uint8_t NRF24_Read_RX_DMA(uint8_t *data, uint8_t data_size);
+uint8_t NRF24_Read_RX_DPL_DMA(uint8_t *data);
 uint8_t NRF24_RX_PAYLOAD_LENGHT_DMA(void);
 void NRF24_Send_TX_DMA(uint8_t *data, uint16_t size);
 /*==============================================================================*/
