@@ -1,5 +1,5 @@
 <div align="center">
-# STM32F030F4P6 NRF24L01 Project 🇺🇸 🇷🇺
+# NRF24L01+ library for STM32
 
 [English](#english) | [Русский](#russian)
 
