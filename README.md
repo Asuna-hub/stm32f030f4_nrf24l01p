@@ -1,3 +1,13 @@
+<div align="center">
+# STM32F030F4P6 NRF24L01 Project 🇺🇸 🇷🇺
+
+[English](#english) | [Русский](#russian)
+
+</div>
+
+<a name="russian"></a>
+
+## RU Russian Version
 # Описание 
 Библиотека для NRF24L01+ под микроконтроллеры STM32 для CMSIS. В этой документации не будут описаны регистры NRF24L01+ и описание его команд, так как для этого есть официальная документация. Также не будет затронута настройка периферий SPI и DMA, функции задержки и наистройка пинов, они могут отличаться у различных моделей микроконтроллеров. В данном репозитории же представлен пример для STM32F030F4P6, рекомендуется ориентироваться на него при настройке периферии. 
 
@@ -112,6 +122,10 @@ while(!(nrf24_irq_flaq)); // Флаг прерывания
 uint8_t result[32];
 uint8_t stat = NRF24_Read_RX_DPL(result);
 ```
+
+<a name="english"></a>
+## 🇺🇸 English Version
+
 # Description
 A library for NRF24L01+ for STM32 microcontrollers using CMSIS. This documentation will not cover the NRF24L01+ registers or command descriptions, as they are available in the official datasheet. Additionally, it will not cover the configuration of SPI and DMA peripherals, delay functions, or pin settings, as these may differ between various microcontroller models. The repository includes an example for STM32F030F4P6, and it is recommended to refer to it when setting up peripherals.
 
@@ -120,40 +134,40 @@ The header file nrf24.h contains masks for NRF24 registers and bits, function de
 # Functions
 Functions with and without DMA perform the same tasks.
 
-- NRF24_Read_Reg(_DMA)
+- NRF24_Read_Reg(_DMA)\
 Reads a value from a register.
 
-- NRF24_Write_Reg(_DMA)
+- NRF24_Write_Reg(_DMA)\
 Writes a value to a register, overwriting the ENTIRE register.
 
-- NRF24_Write_Bit(_DMA)
+- NRF24_Write_Bit(_DMA)\
 Writes a SINGLE bit to a register without overwriting the entire register.
 
-- NRF24_Write_Reg_Multiple(_DMA)
+- NRF24_Write_Reg_Multiple(_DMA)\
 Similar to NRF24_Write_Reg, but writes data to a register larger than 1 byte (e.g., an address).
 
-- NRF24_Write_Payload(_DMA)
+- NRF24_Write_Payload(_DMA)\
 Writes data to the TX payload register.
 
-- NRF24_Clear_Status(_DMA)
+- NRF24_Clear_Status(_DMA)\
 Clears status bits in the STATUS register.
 
-- NRF24_FLUSH_RX(_DMA), NRF24_FLUSH_TX(_DMA)
+- NRF24_FLUSH_RX(_DMA), NRF24_FLUSH_TX(_DMA)\
 Clears the RX and TX buffers, respectively.
 
-- NRF24_Set_rx_addr(_DMA)
+- NRF24_Set_rx_addr(_DMA)\
 Writes addresses for receiver pipes 1–5.
 
-- NRF24_Set_P0_TX_addr(_DMA)
+- NRF24_Set_P0_TX_addr(_DMA)\
 Writes the address for pipe 0 and the "transmit" (TX) pipe; these must be identical.
 
-- NRF24_Read_RX(_DMA)
+- NRF24_Read_RX(_DMA)\
 Reads received data from the RX payload.
 
-- NRF24_RX_PAYLOAD_LENGTH(_DMA)
+- NRF24_RX_PAYLOAD_LENGTH(_DMA)\
 Reads the length of received data from the RX payload (only with DPL enabled).
 
-- NRF24_Read_RX(_DMA)_DPL
+- NRF24_Read_RX(_DMA)_DPL\
 Reads received data from the RX payload (only with DPL enabled).
 
 # Configuring NRF24L01+
